@@ -1,0 +1,14 @@
+{
+  "name": "my-node-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "howler": "^2.2.3"
+  },
+  "devDependencies": {
+    "express": "^4.17.2",
+    "parcel-bundler": "^1.12.5"
+  }
+}
