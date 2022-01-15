@@ -27,7 +27,10 @@ export default class Frankenstrument {
     this.sustain.name = sustainData.name[1];
   }
 
-
+  /**
+   * Get the combined name of the frankenstrument
+   * @return {string}
+   */
   get name () {
     return this.attack.name+""+this.sustain.name;
   }
