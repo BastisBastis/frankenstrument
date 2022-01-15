@@ -11,7 +11,25 @@ export default class Frankenstrument {
    * @param {string} attackData.notes[].note Note name and octave for instance fs4
    * @param {string} attackData.notes[].path Path to the audio file
    *
+   * @param {Object} sustainData Data about the instrument used for the sustain
+   * @param {string[]} sustainData.name Array with the first and last half of the instrument name
+   * @param {number} sustainData.fadeStart Time before the sustain starts fading in
+   * @param {Object[]} sustainData.notes Collection of note data
+   * @param {string} sustainData.notes[].note Note name and octave for instance fs4
+   * @param {string} sustainData.notes[].path Path to the audio file
    */
    
-  constructor (attackData,sustainData)
+  constructor (attackData,sustainData) {
+    this.attack = {};
+    this.sustain = {};
+
+    this.attack.name = attackData.name[0];
+    this.sustain.name = sustainData.name[1];
+  }
+
+
+  get name () {
+    return this.attack.name+""+this.sustain.name;
+  }
+
 }
